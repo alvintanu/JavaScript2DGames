@@ -1,0 +1,76 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #333;
+}
+
+#game-board {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px;
+}
+
+#leveling {
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+#progress-bar {
+    width: 100%;
+    margin-top: 5px;
+    background-color: grey;
+}
+  
+#cooldown-bar {
+    width: 0%;
+    height: 30px;
+    background-color: green;
+}
+
+#inventory {
+}
+
+#inventory button {
+    width: calc(100%/5);
+    height: 25px;
+    font-size: 50%;
+}
+
+#ui-game {
+    padding-top: 10px;
+}
+
+#btn-inventory {
+}
+
+#experience-bar {
+    position: absolute;
+    bottom: 0;
+    padding: -10px;
+    width: 100%;
+    background-color: grey;
+}
+  
+#current-experience {
+    position: absolute;
+    bottom: 0;
+    margin-left: -10px;
+    width: 0%;
+    height: 10px;
+    background-color: green;
+}
