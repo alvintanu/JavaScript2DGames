@@ -65,36 +65,6 @@ document.getElementById('btn-inventory').onclick = function showInventory() {
 
 // inventory ended here
 
-// sistem achievement
-
-// Why are you collecting the deads ?!?!
-var deadmouse_counter = 0;
-// Doing the good deeds to the sea. Nice
-var trash_counter = 0;
-// What a catch!! WOW!
-var goldarowana_counter = 0;
-// Gold expert
-var gold_counter = 0;
-// I got myself a car!
-var arowana_counter = 0;
-// I'll make myself a sushi!
-// Sushi Master!!!
-var tuna_counter = 0;
-// Congratulations You just catch a Pokemon!!
-// Pokemon Master!
-var waterbreathingduck_counter = 0;
-// Good time to fish huh?
-var seikowatch_counter = 0;
-for(let i = 0; i < unat.item_history.length; i++) {
-    if(unat.item_history[i] == "Gold Arowana") {
-        goldarowana_counter++;
-    } else if(unat.item_history[i] == "100gr of Gold") {
-        gold_counter++;
-    } else if(unat.item_history[i] == "Boots" || unat.item_history[i] == "Bottle")
-}
-
-// sistem achievement ended here
-
 // skill buttons
 document.getElementById('skill1').onclick = function do_skill() {
     var skill = document.getElementById('skill1').textContent;
@@ -244,7 +214,7 @@ function fish() {
         if (chance_2 > 8) {
             unat.inventory.push("Water breathing duck??")
             unat.item_history.push("Water breathing duck??")
-            window.alert("Selamat anda mendapatkan ikan Water breathing duck??!");
+            window.alert("Selamat anda mendapatkan Water breathing duck??!");
         } else {
             unat.inventory.push("Catfish")
             unat.item_history.push("Catfish")
@@ -281,6 +251,76 @@ function hunt() {
 }
 //skills ended her
 
+// sistem achievement
+
+// Why are you collecting the deads ?!?!
+var deadmouse_counter = 0;
+// Doing the good deeds to the sea. Nice
+var trash_counter = 0;
+// What a catch!! WOW!
+var goldarowana_counter = 0;
+// Gold Expert
+var gold_counter = 0;
+// I got myself a car!
+var arowana_counter = 0;
+// I'll make myself a sushi!
+// Sushi Master!!!
+var tuna_counter = 0;
+// Congratulations You just catch a Pokemon!!
+// Pokemon Master!
+var waterbreathingduck_counter = 0;
+// Good time to fish huh?
+var seikowatch_counter = 0;
+function achievements() {
+    for(let i = 0; i < unat.item_history.length; i++) {
+        if(unat.item_history[i] == "Gold Arowana") {
+            goldarowana_counter++;
+        } else if(unat.item_history[i] == "100gr of Gold") {
+            gold_counter++;
+        } else if(unat.item_history[i] == "Boots" || unat.item_history[i] == "Bottle") {
+            trash_counter++;
+        } else if(unat.item_history[i] == "Yellow Fin Tuna") {
+            tuna_counter++;
+        } else if(unat.item_history[i] == "Water breathing duck??") {
+            waterbreathingduck_counter++;
+        } else if(unat.item_history[i] == "Broken SEIKO Watch") {
+            seikowatch_counter++;
+        } else if(unat.item_history[i] == "Dead Mouse") {
+            deadmouse_counter++;
+        }
+        console.log("deadmouse" + deadmouse_counter)
+        console.log("trash" + trash_counter)
+        console.log("gold aro" + goldarowana_counter)
+        console.log("gold" + gold_counter)
+        console.log("aro" + arowana_counter)
+        console.log("tuna" + tuna_counter)
+        console.log("pokemon" + waterbreathingduck_counter)
+        console.log("seiko" + seikowatch_counter)
+    }
+    
+    if(goldarowana_counter == 1) {
+        console.log("What a catch!! WOW!")
+    } else if(gold_counter == 1) {
+        console.log("Gold Expert")
+    } else if(trash_counter == 2) {
+        console.log("Doing the good deeds to the sea. Nice")
+    } else if(tuna_counter == 1) {
+        console.log("I'll make myself a sushi!")
+    } else if(tuna_counter == 10) {
+        console.log("Sushi Master!!!")
+    } else if(waterbreathingduck_counter == 1) {
+        console.log("Congratulations You just catch a Pokemon!!")
+    } else if(waterbreathingduck_counter == 10) {
+        console.log("Pokemon Master!")
+    } else if(seikowatch_counter == 1) {
+        console.log("Good time to fish huh?")
+    } else if(deadmouse_counter == 2) {
+        console.log("Why are you collecting the deads ?!?!")
+    }
+}
+
+// sistem achievement ended here
+
 function refresh() {
     if(unat.experience >= unat.experience_pool) {
         let exp_sisa = unat.experience - unat.experience_pool;
@@ -296,6 +336,7 @@ function refresh() {
             unat.experience_pool += unat.level * 75;
         }
     }
+    achievements();
     level_bar(unat.experience, unat.experience_pool);
     console.table(unat);
     document.getElementById('player').innerHTML = unat.username + "<br> Level: " + unat.level;    
