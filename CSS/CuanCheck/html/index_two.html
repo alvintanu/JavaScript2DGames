@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuanCheck</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="input_recipe">
+        <form action="">
+            <label for="">Recipe</label>
+            <div id="wrapper" class="content">
+                <label>Nama Resep: <input type="text" name="nama_resep"/></label>
+                <br>
+                <label>
+                    Nama Bahan: <input type="text"  name="nama_bahan" id="nama0"/>
+                    Harga Bahan: <input type="text"  name="harga_bahan" id="harga0"/>
+                    Per: <input type="text" style="width:48px;" name="berat_bahan" id="berat0"/>
+                    <select id="satuan0" name="satuan">
+                        <option value="gram">gram</option>
+                        <option value="ml">ml</option>
+                    </select>
+                </label>
+            </div>
+            <br>
+            <input type="button" id="more_fields" onclick="add_fields();" value="Tambah Bahan" />
+            <input type="submit" id="confirm_recipe" value="Bahan Selesai">
+        </form>
+        <br>
+    </div>
+    <div id="show_recipe">
+        
+    </div>
+</body>
+</html>

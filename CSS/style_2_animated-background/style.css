@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #0c192c;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+}
+
+/* diamond */
+#cut-diamond span {
+    border-style: solid;
+    border-color: transparent transparent #4fc3dc transparent;
+    border-width: 0 25px 25px 25px;
+    height: 0;
+    width: 50px;
+    box-sizing: content-box;
+    position: relative;
+    margin: 20px 0 50px 0;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+        0 0 50px #4fc3dc,
+        0 0 100px #4fc3dc;
+}
+
+#cut-diamond span:after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: -25px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: #4fc3dc transparent transparent transparent;
+    border-width: 70px 50px 0 50px;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+        0 0 50px #4fc3dc,
+        0 0 100px #4fc3dc;
+    /* animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i)); */
+}
+
+/* diamond */
+/* diamond 2 */
+.diamond {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.diamond span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-width: 50px;
+    border-style: solid;
+    border-color: transparent #72becf #297080 transparent;
+    animation: animates_top 10s linear infinite;
+    /* animation-duration: calc(125s / var(--i)); */
+}
+
+.diamond span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: 0;
+    height: 0;
+    border-width: 50px;
+    border-style: solid;
+    border-color: #4fc3dc #72becf #297080 #04414e;
+    animation: animates 10s linear infinite;
+    /* animation-duration: calc(125s / var(--i)); */
+}
+
+.diamond span:nth-child(3) {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-width: 50px;
+    border-style: solid;
+    border-color: #4fc3dc #72becf #297080 #04414e;
+    animation: animates 10s linear infinite;
+    /* animation-duration: calc(125s / var(--i)); */
+}
+
+.diamond span:nth-child(4) {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 0;
+    height: 0;
+    border-width: 50px;
+    border-style: solid;
+    border-color: #4fc3dc #72becf #297080 #04414e;
+    animation: animates 10s linear infinite;
+    /* animation-duration: calc(125s / var(--i)); */
+}
+
+@keyframes animates_top {
+    0% {
+        transform: translateY(-50px, -100px);
+        border-color: transparent #04414e #72becf transparent;
+    }
+
+    25% {
+        border-color: transparent #4fc3dc #297080 transparent;
+    }
+
+    50% {
+        border-color: transparent #4fc3dc #04414e transparent;
+    }
+
+    75% {
+        border-color: transparent #04414e #72becf transparent;
+    }
+
+    100% {
+        transform: translateY(50px, 100px);
+        border-color: transparent #72becf #04414e transparent;
+    }
+}
+
+@keyframes animates {
+    0% {
+        transform: translateY(-50px, -100px);
+        border-color: #4fc3dc #72becf #297080 #04414e;
+    }
+
+    25% {
+        border-color: #04414e #4fc3dc #297080 #72becf;
+    }
+
+    50% {
+        border-color: #72becf #4fc3dc #04414e #297080;
+    }
+
+    75% {
+        border-color: #297080 #72becf #04414e #4fc3dc;
+    }
+
+    100% {
+        transform: translateY(50px, 100px);
+        border-color: #4fc3dc #72becf #04414e #297080;
+    }
+}
+
+/* diamond 2 */
+.bubbles span {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    background-color: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+        0 0 50px #4fc3dc,
+        0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+        0 0 50px #ff2d75,
+        0 0 100px #ff2d75;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(-100vh);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
