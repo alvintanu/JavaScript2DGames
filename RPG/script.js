@@ -90,7 +90,7 @@ for(let i = 0; i < unat.item_history.length; i++) {
         goldarowana_counter++;
     } else if(unat.item_history[i] == "100gr of Gold") {
         gold_counter++;
-    } else if(unat.item_history[i] == "Boots" || unat.item_history[i] == "Bottle")
+    } else if(unat.item_history[i] == "Boots" || unat.item_history[i] == "Bottle"){}
 }
 
 // sistem achievement ended here
